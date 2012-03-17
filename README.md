@@ -9,4 +9,16 @@ Phase 3:  [Maybe, not sure this makes sense] add ability to select db - postgres
 
 Setup
 
-coming soon...
+Run the following at the commandline:
+
+bash -s stable < <(curl https://github.com/lift-stack/lift-stack/blob/master/setup.sh)
+
+or 
+
+wget https://github.com/lift-stack/lift-stack/blob/master/setup.sh -O- | sh
+
+or if you want to inspect the code before running it:
+
+wget https://github.com/lift-stack/lift-stack/blob/master/setup.sh
+
+sh setup.sh

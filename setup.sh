@@ -19,14 +19,16 @@
 # REQUIREMENTS
 # 1.  Java: 1.5 or higher, installed and in your path
 # 2.  Scala: sbt will install 
-# 3.  $HOME/bin is the default install dir for the sbt command, so it must be in your path
-#   use from any location on the commandline.
+# 3.  $HOME/bin is the default install dir for the sbt command, so it must be in your 
+#   path to use from any location on the commandline.  You can specify another install
+#   location by changing the $SBT_DIR variable below.
 #
 ########################################################################################
 #
 # SETUP VARIABLES 
 
 BIN_DIR="$HOME/bin"
+SBT_BIN="${BIN_DIR}"
 LS_DIR="${BIN_DIR}/lift/stack"
 
 
