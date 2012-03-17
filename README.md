@@ -11,14 +11,14 @@ Setup
 
 Run the following at the commandline:
 
-bash < <(curl https://github.com/lift-stack/lift-stack/blob/master/setup.sh)
+bash < <(curl https://raw.github.com/lift-stack/lift-stack/master/setup.sh)
 
 or 
 
-wget https://github.com/lift-stack/lift-stack/blob/master/setup.sh -O- | sh
+wget https://raw.github.com/lift-stack/lift-stack/master/setup.sh -O- | sh
 
 or if you want to inspect the code before running it:
 
-wget https://github.com/lift-stack/lift-stack/blob/master/setup.sh
+wget https://raw.github.com/lift-stack/lift-stack/master/setup.sh
 
 sh setup.sh
