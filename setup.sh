@@ -90,3 +90,12 @@ echo "Running 'chmod u+x' on ${SBT_XTR_DEST}, please enter your password for sud
 sudo chmod u+x ${SBT_XTR_DEST}
 
 # cd to LS_DIR and run sbt create lift project
+
+
+
+# Welcome message:
+# 1.  Lift Stack installed.  CD to $LS_DIR or another  directory you want to create a 
+#   Lift project in, and run 'sbt -sbt-create'.  sbt requires 1536MB free RAM by default.
+#   If you do not have that much, run sbt with -mem param: 'sbt -mem 512 -sbt-create'.
+#
+# ...
