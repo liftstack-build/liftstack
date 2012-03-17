@@ -41,20 +41,20 @@ LS_DIR="${BIN_DIR}/lift/stack"
 # sbt
 SBT_VER="0.12"      # 0.11.2 || master || etc.
 SBT_DIR="$HOME/.sbt"
-SBT_JAR="sbt-launch"
+SBT_JAR="sbt-launch"    # sbt-extras assumes sbt name is sbt-launch.jar
 SBT_JAR_EXT="jar"
 SBT_JAR_VER_EXT="${SBT_JAR}-${SBT_VER}.${SBT_JAR_EXT}"
 # SBT_ORIGIN="http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/$SBT_VER/$SBT_JAR.$SBT_JAR_EXT 
-# SBT_ORIGIN="https://github.com/lift-stack/xsbt/zipball/${SBT_VER}"
-SBT_ORIGIN="https://github.com/harrah/xsbt/zipball/${SBT_VER}"
-SBT_DEST="${BIN_DIR}/${SBT_JAR}.${SBT_JAR_EXT}"
+# SBT_ORIGIN="https://github.com/lift-stack/xsbt/tarball/${SBT_VER}"
+SBT_ORIGIN="https://github.com/harrah/xsbt/tarball/${SBT_VER}"
+SBT_DEST="${SBT_BIN}/${SBT_JAR}.${SBT_JAR_EXT}"
 
 # sbt-extras
 SBT_XTR_ZIP="sbt-extras.tar.gz"
-SBT_XTR_PATH="${BIN_DIR}/${SBT_XTR_ZIP}"
+SBT_XTR_PATH="${SBT_BIN}/${SBT_XTR_ZIP}"
 # SBT_XTR_ORIGIN="https://raw.github.com/lift-stack/sbt-extras/master/sbt"
 SBT_XTR_ORIGIN="https://raw.github.com/paulp/sbt-extras/master/sbt"
-SBT_XTR_DEST="$BIN_DIR/sbt"
+SBT_XTR_DEST="$SBT_BIN/sbt"
 
 # lifty
 LIFTY_VER="1.7.4"
@@ -64,26 +64,29 @@ SBT_PLUGIN_ORIGIN="http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-rel
 
 
 # test if working dirs exists, if not create it
-[ -d "$BIN_DIR" ] || mkdir -p $BIN_DIR 
+[ -d "$SBT_BIN" ] || mkdir -p $SBT_BIN
 [ -d "$SBT_DIR/plugins" ] || mkdir -p $SBT_DIR/plugins
 [ -d "$LS_DIR" ] || mkdir -p $LS_DIR 
 
 # test if $BIN_DIR in path, if not add it.
 # ...
 
+# get sbt launcher
+echo "getting ${SBT_ORIGIN}..."
+wget ${SBT_ORIGIN} -O ${SBT_DEST}
+
+# get sbt-extras script
+echo "getting ${SBT_XTR_ORIGIN}"
+wget ${SBT_XTR_ORIGIN} -O ${SBT_XTR_DEST}
+
 # add lifty plugin to sbt plugins
+echo "adding lifty to sbt plugins..."
 echo "resolvers += Resolver.url(\"sbt-plugin-releases\", new URL(\"${SBT_PLUGIN_ORIGIN}\"))(Resolver.ivyStylePatterns)" >> $SBT_DIR/plugins/build.sbt
 echo "addSbtPlugin(\"org.lifty\" % \"lifty\" % \"${LIFTY_VER}\")" >> $SBT_DIR/plugins/build.sbt
 echo "seq( Lifty.liftySettings : _*)" >> $SBT_DIR/build.sbt
 
-# get sbt launcher
-wget ${SBT_ORIGIN} -O ${SBT_DEST}
-
-# get sbt-extras script
-wget ${SBT_XTR_ORIGIN} -O ${SBT_XTR_DEST}
-
 # make sbt writeable
-echo "Running chmod u+x on ${SBT_XTR_DEST}, please enter your password for sudo:  "
+echo "Running 'chmod u+x' on ${SBT_XTR_DEST}, please enter your password for sudo:  "
 sudo chmod u+x ${SBT_XTR_DEST}
 
-
+# cd to LS_DIR and run sbt create lift project
