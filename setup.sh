@@ -25,7 +25,8 @@
 # REQUIREMENTS
 #
 # 1.  Java: 1.5 or higher, installed and in your path
-# 2.  Scala: not required, sbt will install automatically
+# 2.  Scala: not required, sbt will install automatically.  However, sbt-extras can
+#   use a local installation with a commandline flag if you prefer.
 # 3.  $HOME/bin is the default install dir for the sbt command, or you can specify 
 #   another install location by changing the $SBT_DIR variable below.  Whichever you
 #   use, make sure it's in your path.  This will be automated in the script later.
