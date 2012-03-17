@@ -1,0 +1,1 @@
+/home/kurtosis/bin/scripts/scala/lift/stack/setup.sh
