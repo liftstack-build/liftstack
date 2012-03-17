@@ -11,7 +11,7 @@ Setup
 
 Run the following at the commandline:
 
-bash -s stable < <(curl https://github.com/lift-stack/lift-stack/blob/master/setup.sh)
+bash < <(curl https://github.com/lift-stack/lift-stack/blob/master/setup.sh)
 
 or 
 
