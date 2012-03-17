@@ -1,5 +1,7 @@
 Introduction
 
+Work In Progress, not ready for public use yet.
+
 Phase 1:  A simple script to download and setup sbt, sbt-extras, and lifty.
 
 Phase 2:  Add ability to choose servlet container or network stack - jetty or netty
