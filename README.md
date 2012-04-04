@@ -1,26 +1,24 @@
-Introduction
+*Introduction*
 
-Work In Progress, not ready for public use yet.
+A giter8 based quick setup tool for the Lift web framework and helpers.
 
-Phase 1:  A simple script to download and setup sbt, sbt-extras, and lifty.
+*Components*
 
-Phase 2:  Add ability to choose servlet container or network stack - jetty or netty
+1.  Lift Framework (current stable version 2.4)
 
-Phase 3:  [Maybe, not sure this makes sense] add ability to select db - postgres, mongo, redis
+- Blank Template
 
+- Basic Template
 
-Setup
+- HTML5 Boilerplate + Bootstrap 2.0
 
-Run the following at the commandline:
+- HTML5 Boilerplate + Kickstrap
 
-bash < <(curl https://raw.github.com/lift-stack/lift-stack/master/setup.sh)
+2.  SBT
 
-or 
+3.  SBT Extras script
 
-wget https://raw.github.com/lift-stack/lift-stack/master/setup.sh -O- | sh
+4.  Lifty
 
-or if you want to inspect the code before running it:
+5.  giter8
 
-wget https://raw.github.com/lift-stack/lift-stack/master/setup.sh
-
-sh setup.sh
