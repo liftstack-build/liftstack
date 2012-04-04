@@ -22,3 +22,5 @@ A giter8 based quick setup tool for the Lift web framework and helpers.
 
 5.  giter8
 
+6.  Scala
+
