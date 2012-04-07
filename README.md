@@ -1,4 +1,4 @@
-## Giter8 template for Lift 2.4, Scala 2.9, blank, html5-ready
+## Lift Stack Setup Guide
 
 ### Quick Start:
 
